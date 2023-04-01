@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: JAR Artifacts
-          path: build/libs/*.jar
+          path: proxy/build/libs/*.jar
       - name: Set outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
@@ -43,7 +43,7 @@ jobs:
         uses: ncipollo/release-action@v1
         id: create_release
         with:
-          artifacts: "build/libs/*.jar"
+          artifacts: "proxy/build/libs/*.jar"
           bodyFile: "body.md"
           token: ${{ secrets.GITHUB_TOKEN }}
           name: ci-${{ steps.vars.outputs.sha_short }}
