@@ -115,7 +115,7 @@ public class KeyedChatHandler implements
       if (chatResult.getMessage().map(str -> !str.equals(packet.getMessage())).orElse(false)) {
         if (playerKey.getKeyRevision().compareTo(IdentifiedKey.Revision.LINKED_V2) >= 0) {
           // Bad, very bad.
-          invalidChange(logger, player);
+          // invalidChange(logger, player);
         } else {
           logger.warn("A plugin changed a signed chat message. The server may not accept it.");
           return player.getChatBuilderFactory().builder()
