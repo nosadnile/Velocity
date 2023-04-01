@@ -107,7 +107,7 @@ public class KeyedChatHandler implements
       if (!chatResult.isAllowed()) {
         if (playerKey.getKeyRevision().compareTo(IdentifiedKey.Revision.LINKED_V2) >= 0) {
           // Bad, very bad.
-          invalidCancel(logger, player);
+          // invalidCancel(logger, player);
         }
         return null;
       }
