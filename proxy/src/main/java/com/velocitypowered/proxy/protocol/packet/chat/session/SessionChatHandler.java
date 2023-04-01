@@ -57,7 +57,7 @@ public class SessionChatHandler implements ChatHandler<SessionPlayerChat> {
               PlayerChatEvent.ChatResult chatResult = pme.getResult();
               if (!chatResult.isAllowed()) {
                 if (packet.isSigned()) {
-                  invalidCancel(logger, player);
+                  // invalidCancel(logger, player);
                 }
                 return null;
               }
@@ -65,7 +65,7 @@ public class SessionChatHandler implements ChatHandler<SessionPlayerChat> {
               if (chatResult.getMessage().map(str -> !str.equals(packet.getMessage()))
                   .orElse(false)) {
                 if (packet.isSigned()) {
-                  invalidChange(logger, player);
+                  // invalidChange(logger, player);
                   return null;
                 }
                 return this.player.getChatBuilderFactory().builder().message(packet.message)
